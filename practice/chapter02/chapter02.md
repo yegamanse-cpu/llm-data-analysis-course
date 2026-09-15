@@ -82,6 +82,8 @@ git version 2.x.x
 - [X] Git 버전을 확인했습니다.
 ![STEP 1-3](images/step1-3_versions.png)
 
+- [Comment] powershell 터미널에서 git과 python 버젼을 확인한 결과 git은 2.55.0 / python은 3.14.6 버젼을 확인하였다. 교수님은 python 3.12버젼을 사용하신다고 했지만 실습에 3.14 버젼을 사용해도 크게 상관없다 하셔서 유지하려고 한다. 별도의 오류발생은 없는 것으로 보아 path연결이 잘 되었다고 판단된다.
+
 ## 오류가 나면
 
 명령을 찾을 수 없다면 설치가 안 되어 있거나 PATH가 연결되지 않은 상태일 수 있습니다. 설치 후 VS Code와 터미널을 완전히 닫았다가 다시 실행해 확인합니다.
@@ -130,6 +132,8 @@ README.md
 - [x] 현재 폴더가 `llm-data-analysis-course`입니다.
 - [x] `requirements.txt`, `notebooks`, `scripts`, `data`가 보입니다.
 ![STEP 2-3](images/step2-3_path.png)
+- [Comment] 실습 절차와 같이 llm-data-analyst-course를 clone하여 내려받고자 했으나 전차에 교수님의 실습파일들을 clone하여 내려받았기 때문에 폴더들이 더 많은것을 확인하였다. 따라서 기존에 내려받은 폴더/파일들을 일부 삭제하고 실습코스를 따라갔다. 잘못 관리하다가는 개인 저장소들이 뒤죽박죽이 될 수 있기떄문에 관리가 잘 필요하다는 생각이 드는 부문이다.
+
 
 ## 오류가 나면
 
@@ -164,6 +168,7 @@ code .
 - [x] VS Code에서 저장소 루트 폴더를 열었습니다.
 - [x] Explorer에서 `notebooks/`, `data/`, `scripts/`를 확인했습니다.
 ![STEP 3-3](images/step3-3_vscode.png)
+- [Comment] vscode explorer에서 notebooks와 data, scripts 폴더가 있음을 확인하였다. 터미널에서 code. 실행도 문제 없었다. 초기 설정에 문제가 없음이 확인되는 부분이다.
 
 ---
 
@@ -202,6 +207,7 @@ python3 -m venv .venv
 - [x] `.venv` 폴더가 생성되었습니다.
 - [x] 오류 메시지 없이 명령이 끝났습니다.
 ![STEP 4-3](images/step4-3_venv.png)
+- [Comment] vscode explorer창에 .venv 폴더가 생긴것을 확인하였다. 각 프로젝트에 맞는 패키지(?)를 써야된다는 사실도 처음 알게 되었고 때문에 프로젝트별 가상환경을 설정해야된다는 점이 흥미로운 부분이었다.
 
 ## 오류가 나면
 
@@ -241,6 +247,8 @@ source .venv/bin/activate
 
 - [x] 터미널에 `(.venv)`가 표시됩니다.
 ![STEP 4-3](images/step5-3.png)
+- [Comment] vscode 하단 터미널창에 .venv 표시가 된 것을 확인하였다. 처음에는 .venv 표시가 되지 않아 새 터미널을 생성하니 문제없이 출력되었다. 강의 상에는 .venv가 바로 표시가 되었으나 내 pc환경에는 그리 되지 않아 의구심이 들었지만 큰 문제가 아니라 판단된다.
+
 
 ## 오류가 나면
 
@@ -298,7 +306,9 @@ macOS/Linux 예:
 ## 성공 기준
 
 - [x] 출력 경로에 프로젝트의 `.venv`가 포함됩니다.
-![STEP 6-3](images/step6-3_venv_terminal.png)
+![STEP 6-3](images/step6-3_venv_termina.png)
+- [Comment] 출력경로에 .venv가 포함됨이 확인되었다. 교수님이 말씀하신 가상환경 내 python이 실행된다는 의미로 판단된다. 
+
 
 ## 오류가 나면
 
@@ -328,6 +338,7 @@ python -m pip install -r requirements.txt
 - [x] `python -m pip`를 사용했습니다.
 - [x] `requirements.txt` 설치가 완료되었습니다.
 ![STEP 7-3](images/step7-3_install.png)
+- [Comment] 업그래이트 패키지와 requirement에 있는 패키지가 모두 설치완료 되었다. pandas 등 실습데이터 분석에 필요한 툴들을 모두 준비 했다는 의미로 판단된다.
 
 ## 오류가 나면
 
@@ -381,7 +392,7 @@ macOS/Linux:
 - [x] 프로젝트 `.venv` 인터프리터를 선택했습니다.
 - [x] 시스템 Python이나 다른 프로젝트 Python을 선택하지 않았습니다.
 ![STEP 8-2](images/step8-2_interpreter.png)
-
+- [Comment] 파이썬 인터프리터로 .venv경로를 선택 완료 하였다. 이로써 가상환경 상 파이썬을 쓴다는 환경설정이 끝난 것으로 판단된다.
 ---
 
 # STEP 9. 샘플 데이터 생성하기
@@ -420,6 +431,7 @@ Get-ChildItem data\raw
 - [x] `data/raw/customers.csv`가 존재합니다.
 - [x] 나머지 3개 CSV도 확인했습니다.
 ![STEP 9-3](images/step9-3_generate_raw_file.png)
+- [Comment] 데이터 4개의 파일을 생성완료 하였다. 서두에 언급한 대로 당초 교수님의 자료를 모두 내려받았기 떄문에 해당 폴더를 삭제하고 새로 생성하여 추진했다. 파일 내의 데이터도 문제없는 것으로 확인된다. 
 
 ## 오류가 나면
 
@@ -455,6 +467,7 @@ Markdown 셀과 Code 셀이 Notebook 형식으로 보입니다.
 
 - [x] `ch02_environment_setup.ipynb`를 열었습니다.
 ![STEP 10-3](images/step10-3_notebooks.png)
+- [Comment] 이 부분도 마찬가지로 당초에 챕터02의 노트북이 있었기 때문에 강의를 따라 기존파일을 삭제하고 새로 생성하여 추진하였다. 노트북 상에서 마크다운과 코드가 분리되어 있어 코드가 바로 실행이 되는게 인상적인 부분이다.
 
 ---
 
@@ -482,6 +495,8 @@ Notebook 커널 Python
 
 - [x] Notebook 커널이 프로젝트 `.venv`입니다.
 ![STEP 11-2](images/step11-2_kernel.png)
+- [Comment] 우측 상단에 커널이 .venv임을 확인하였다. 터미널에서 패키지를 설치한 파이썬과 노트북 파이썬도 같게 되었다고 판단된다. 
+
 
 ## 오류가 나면
 
@@ -532,6 +547,8 @@ print('현재 작업 폴더:', Path.cwd())
 - [x] `sys.executable`에 `.venv`가 포함됩니다.
 - [x] `Path.cwd()` 결과를 기록했습니다.
 ![STEP 12-3](images/step12-3_path.png)
+- [Comment] 노트북 상 코드에서 해당 경로가 문제없이 출력되는 것을 확인하였다. 현재 사용하는 파이썬이 가상환경에 있는 파이썬이라는 점을 재확인하였다.
+
 
 ## 오류가 나면
 
@@ -561,6 +578,8 @@ Notebook의 **패키지와 데이터 경로 설정** 셀을 실행합니다.
 
 - [x] `데이터 폴더 존재 여부: True`가 표시됩니다.
 ![STEP 13-2](images/step13-2_data.png)
+- [Comment] 데이터 폴더 존재여부를 true로 확인하였다. 이는 이전 단계에서 제너레이트-샘플데이터로 처리한 폴더를 재확인한 셈이며 노트북의 작업폴더와도 경로가 맞다는 의미로 판단된다.
+
 
 ## 오류가 나면
 
@@ -597,6 +616,7 @@ customers.head()
 - [x] `FileNotFoundError`가 없습니다.
 - [x] `ModuleNotFoundError`가 없습니다.
 ![STEP 14-3](images/step14-3_customer.png)
+- [Comment] 이도 마찬가지로 이전에 생성한 샘플데이터를 올바르게 가져오는지를 확인한 부분이며 고객데이터의 행이 표로 생성됨을 보여준다. 별도의 오류사항은 없다. 
 
 ## 오류가 나면
 
@@ -640,6 +660,8 @@ customers.info()
 - [x] `customers.info()`가 오류 없이 실행됩니다.
 ![STEP 15-2](images/step15-2.png)
 
+- [Comment] 샘플데이터의 행과열, 컬럼등이 모두 문제없이 출력됨을 확인하였다. 
+
 > 정확한 데이터 해석은 Chapter 03에서 본격적으로 진행합니다. 여기서는 환경 연결 확인이 목적입니다.
 
 ---
@@ -681,8 +703,8 @@ git ls-files .env
 - [x] 실제 API Key를 코드에 직접 적지 않습니다.
 - [x] `.env`가 Git 추적 대상이 아닙니다.
 - [x] Notebook 출력이나 화면 캡처에도 Secret을 노출하지 않습니다.
-
 ![STEP 16-2](images/step16-2.png)
+- [Comment] .gitignore상에서  .env 등을 추적하지 않도록 설정해놓았음을 확인하였다. 이외 .venv , pycache 등도 올바르게 포함되어 있었다.
 
 ---
 
